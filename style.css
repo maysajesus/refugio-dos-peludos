@@ -1,0 +1,357 @@
+:root {
+  --primary: #ff8210;
+  --accent: #ffd200;
+  --dark: #233044;
+  --muted: #6b7280;
+  --card: #ffffff;
+  --glass: #ffffffd9;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  margin: 0;
+  line-height: 1.45;
+  color: var(--dark);
+  background: linear-gradient(180deg, #f7fbff 0%, #ffffff 100%);
+}
+
+header {
+  background: var(--card);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 2px 8px #0a0a0a0a;
+  position: sticky;
+  top: 0;
+  z-index: 60;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand img {
+  width: 56px;
+  height: 56px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.brand h1 {
+  font-size: 18px;
+  margin: 0;
+}
+
+nav ul {
+  display: flex;
+  gap: 12px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav a {
+  color: var(--dark);
+  text-decoration: none;
+  padding: 8px 10px;
+  border-radius: 8px;
+}
+
+nav a.cta {
+  background: var(--primary);
+  color: #fff;
+}
+
+/* Hero */
+.hero {
+  padding: 56px 0;
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 28px;
+  align-items: center;
+}
+
+.hero h2 {
+  font-size: 36px;
+  margin: 0 0 12px;
+}
+
+.hero p {
+  color: var(--muted);
+  margin: 0 0 18px;
+}
+
+.buttons {
+  display: flex;
+  gap: 12px;
+}
+
+.card {
+  background: var(--card);
+  border-radius: 12px;
+  padding: 18px;
+  box-shadow: 0 6px 18px #14141e0f;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 18px;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+section {
+  padding: 36px 0;
+}
+
+h3 {
+  margin: 0 0 12px;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.cta-ghost {
+  background: transparent;
+  border: 2px solid var(--primary);
+  color: var(--primary);
+  padding: 8px 12px;
+  border-radius: 8px;
+}
+
+footer {
+  background: #f1f5f9;
+  padding: 28px 0;
+  margin-top: 36px;
+}
+
+/* Responsivo */
+@media (max-width: 980px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+  .grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .container {
+    padding: 16px;
+  }
+}
+
+@media (max-width: 640px) {
+  .grid-3 {
+    grid-template-columns: 1fr;
+  }
+  .brand h1 {
+    font-size: 16px;
+  }
+  .hero h2 {
+    font-size: 26px;
+  }
+  nav {
+    display: none;
+    flex-direction: column;
+    background: var(--card);
+    padding: 10px;
+    border-radius: 8px;
+    position: absolute;
+    top: 70px;
+    right: 10px;
+  }
+  nav.active {
+    display: flex;
+  }
+  .menu-toggle {
+    display: block;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+  }
+}
+
+/* Utilitários */
+.pill {
+  display: inline-block;
+  background: var(--accent);
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-weight: 600;
+}
+
+.socials a {
+  margin-right: 8px;
+  text-decoration: none;
+  color: var(--dark);
+}
+
+.badgelight {
+  font-size: 13px;
+  background: #eef6ff;
+  padding: 6px 8px;
+  border-radius: 8px;
+  color: #083d77;
+}
+
+.testimony {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.testimony img {
+  width: 72px;
+  height: 72px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.maps {
+  height: 220px;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid #e6eef8;
+}
+
+.download-buttons a {
+  display: inline-block;
+  margin-right: 8px;
+  margin-top: 8px;
+}
+/*2 parte do ccs*/
+
+/* BOTÕES */
+a.cta, button.cta {
+  background-color: var(--primary);
+  color: #ffffff;
+  font-weight: 700;
+  padding: 14px 24px;
+  border-radius: 10px;
+  text-transform: uppercase;
+  box-shadow: 0 4px 15px #ff7a5966;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  display: inline-block;
+  cursor: pointer;
+  border: none;
+  text-align: center;
+}
+
+a.cta:hover, button.cta:hover {
+  background-color: #e8663e;
+  transform: scale(1.05);
+}
+
+/* BOTÕES GHOST */
+a.cta-ghost {
+  border: 2px solid var(--primary);
+  color: var(--primary);
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+a.cta-ghost:hover {
+  background-color: var(--primary);
+  color: #ffffff;
+  box-shadow: 0 4px 15px #ff7a5980;
+}
+
+/* CARDS */
+.card {
+  background: var(--card);
+  border-radius: 16px;
+  padding: 22px;
+  box-shadow: 0 8px 20px #00000012;
+  transition: box-shadow 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 12px 30px rgba(255, 122, 89, 0.3);
+}
+
+/* CLASSIFICAÇÃO (estrelas) */
+.rating {
+  font-size: 18px;
+  color: #ffd700; /* dourado */
+  user-select: none;
+  margin-top: 6px;
+}
+
+/* Exemplo para "Castrado", "Vacinado", etc */
+.badge {
+  display: inline-block;
+  background: var(--primary);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  margin-right: 6px;
+  text-transform: uppercase;
+  box-shadow: 0 3px 8px #ff7a5966;
+}
+
+/* IMG dos pets - deixa com borda arredondada e sombra */
+.card img {
+  border-radius: 16px;
+  box-shadow: 0 6px 15px #0000001a;
+  object-fit: cover;
+  max-height: 220px;
+  width: 100%;
+  transition: transform 0.3s ease;
+}
+
+.card img:hover {
+  transform: scale(1.03);
+  cursor: pointer;
+}
+/*3 parte do Css*/
+ 
+.banner-slideshow {
+  position: relative;
+  width: 180%;
+  height: 320px;
+  overflow: hidden;
+  margin-top: -20%;
+}
+
+.banner-slideshow img {
+  position: absolute;
+  width: 100%;
+  height: 80%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.banner-slideshow img.active {
+  opacity: 1;
+}
+
+
